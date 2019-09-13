@@ -9,28 +9,53 @@
 import UIKit
 
 class MemeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    @IBAction func pickImageFromCamera(_ sender: Any) {
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            let alert = Alerts.show(type: .noCamera)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let pickImageController = pickImage(with: .camera)
+        present(pickImageController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func pickImageFromCameraRoll(_ sender: Any) {
+        let pickImageController = pickImage(with: .savedPhotosAlbum)
+        present(pickImageController, animated: true, completion: nil)
+    }
+    
 }
 
+//MARK: UIImagePickerControllerDelegate
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func pickImage(with type: UIImagePickerController.SourceType) {
+    func pickImage(with type: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = type
-        present(imagePicker, animated: true, completion: nil)
+        return imagePicker
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let image = info[.editedImage]
-        print(image.debugDescription)
+        if let image = info[.originalImage] as? UIImage {
+            print("edited image \(image.description)")
+        }
+        
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
     
