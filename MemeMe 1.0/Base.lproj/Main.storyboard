@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vx9-rI-Wcr">
-    <device id="retina4_0" orientation="portrait" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,8 +19,9 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
-                                <rect key="frame" x="9" y="54" width="304" height="36"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
+                                <rect key="frame" x="16" y="60" width="294" height="28"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -30,27 +31,27 @@
                                     <constraint firstAttribute="height" constant="50" id="6DA-rX-P5b"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="camera" id="IDv-EJ-UqA">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zRl-zm-b2h">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="camera" id="COi-yN-asN">
+                                    <barButtonItem title="CAMERA ROLL" style="plain" id="COi-yN-asN">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XUu-fQ-p2d">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </barButtonItem>
-                                    <barButtonItem title="CAMERA ROLL" style="plain" id="NuS-TA-xyi">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="84I-Fv-Oyb">
+                                    <barButtonItem style="plain" systemItem="refresh" id="NuS-TA-xyi">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-cG-F1a">
-                                <rect key="frame" x="9" y="473" width="304" height="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-cG-F1a">
+                                <rect key="frame" x="16" y="474" width="320" height="28"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -58,19 +59,19 @@
                         <color key="backgroundColor" red="0.070589356124401093" green="0.070586778223514557" blue="0.070587299764156342" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FI7-CB-N2B" secondAttribute="trailing" id="2gi-C0-wAh"/>
-                            <constraint firstItem="fJQ-Jg-mmc" firstAttribute="top" secondItem="FI7-CB-N2B" secondAttribute="top" constant="10" id="6C0-Pj-eFX"/>
+                            <constraint firstItem="fJQ-Jg-mmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6C0-Pj-eFX"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="top" secondItem="FI7-CB-N2B" secondAttribute="bottom" id="6Pu-Ho-0qe"/>
-                            <constraint firstItem="ikf-cG-F1a" firstAttribute="leading" secondItem="FI7-CB-N2B" secondAttribute="leading" constant="9" id="8Tl-Bg-9iN"/>
+                            <constraint firstItem="ikf-cG-F1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Tl-Bg-9iN"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HOd-ry-vuC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pO3-fX-ah6" secondAttribute="bottom" id="Is3-vg-CY9"/>
-                            <constraint firstItem="fJQ-Jg-mmc" firstAttribute="leading" secondItem="FI7-CB-N2B" secondAttribute="leading" constant="9" id="U57-U1-SDA"/>
-                            <constraint firstItem="ikf-cG-F1a" firstAttribute="bottom" secondItem="FI7-CB-N2B" secondAttribute="bottom" constant="-9" id="UxJ-AY-mwS"/>
-                            <constraint firstItem="ikf-cG-F1a" firstAttribute="trailing" secondItem="FI7-CB-N2B" secondAttribute="trailing" constant="-7" id="bBV-wf-VKS"/>
+                            <constraint firstItem="fJQ-Jg-mmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="U57-U1-SDA"/>
+                            <constraint firstItem="ikf-cG-F1a" firstAttribute="bottom" secondItem="FI7-CB-N2B" secondAttribute="bottom" constant="-16" id="UxJ-AY-mwS"/>
+                            <constraint firstItem="ikf-cG-F1a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="16" id="bBV-wf-VKS"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="top" secondItem="FI7-CB-N2B" secondAttribute="bottom" id="bYm-UI-tc0"/>
                             <constraint firstItem="FI7-CB-N2B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e5U-5f-HQh"/>
                             <constraint firstItem="FI7-CB-N2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEv-N2-iYA"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qH6-jD-AGP"/>
-                            <constraint firstItem="fJQ-Jg-mmc" firstAttribute="trailing" secondItem="FI7-CB-N2B" secondAttribute="trailing" constant="-7" id="yux-dj-hQD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fJQ-Jg-mmc" secondAttribute="trailing" constant="10" id="yux-dj-hQD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
