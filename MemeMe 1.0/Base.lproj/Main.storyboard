@@ -17,7 +17,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="FI7-CB-N2B">
                                 <rect key="frame" x="0.0" y="44" width="320" height="474"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
                                 <rect key="frame" x="16" y="60" width="294" height="28"/>
@@ -90,7 +90,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="image" destination="FI7-CB-N2B" id="A5g-Cx-z5T"/>
+                        <outlet property="btnCamera" destination="IDv-EJ-UqA" id="fFF-4w-xdt"/>
+                        <outlet property="btnCameraRoll" destination="COi-yN-asN" id="Ivr-ny-jzq"/>
+                        <outlet property="imgMeme" destination="FI7-CB-N2B" id="eQM-Fv-HoS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

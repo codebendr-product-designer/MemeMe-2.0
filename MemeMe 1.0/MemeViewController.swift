@@ -10,7 +10,9 @@ import UIKit
 
 class MemeViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imgMeme: UIImageView!
+    @IBOutlet weak var btnCamera: PickerImageButton!
+    @IBOutlet weak var btnCameraRoll: PickerImageButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class MemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        btnCamera.sourceType = .camera
+        btnCameraRoll.sourceType = .photoLibrary
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
@@ -66,7 +70,7 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.originalImage] as? UIImage {
-            print("edited image \(image.description)")
+            self.imgMeme.image = image
         }
         self.dismiss(animated: true, completion: nil)
         
