@@ -10,6 +10,8 @@ import UIKit
 
 class MemeViewController: UIViewController {
     
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,23 +20,36 @@ class MemeViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func pickImageFromCamera(_ sender: Any) {
+    @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
         
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            let alert = Alerts.show(type: .noCamera)
+        var pickImageController: UIImagePickerController?
+        
+        switch sender.sourceType {
+        case .camera:
+            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                let alert = Alerts.show(type: .noCamera)
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            pickImageController = pickImage(with: .camera)
+   
+        case .photoLibrary :
+            pickImageController = pickImage(with: .photoLibrary)
+            
+        default :
+            //this will never be called.
+            let alert = Alerts.show(type: .noSourceType)
             present(alert, animated: true, completion: nil)
+        }
+        
+        guard let pickImage = pickImageController else {
             return
         }
         
-        let pickImageController = pickImage(with: .camera)
-        present(pickImageController, animated: true, completion: nil)
+        present(pickImage, animated: true, completion: nil)
         
     }
     
-    @IBAction func pickImageFromCameraRoll(_ sender: Any) {
-        let pickImageController = pickImage(with: .savedPhotosAlbum)
-        present(pickImageController, animated: true, completion: nil)
-    }
     
 }
 
@@ -53,8 +68,6 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
         if let image = info[.originalImage] as? UIImage {
             print("edited image \(image.description)")
         }
-        
-        
         self.dismiss(animated: true, completion: nil)
         
     }

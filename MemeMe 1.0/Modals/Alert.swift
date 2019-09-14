@@ -12,16 +12,19 @@ struct Alerts {
     
     enum AlertType {
         case noCamera
+        case noSourceType
     }
     
     static let DismissAlert = "Dismiss"
     
-    //used internally to control error mesaage
+    //used internally to control error messages
     //returns a tuple of message and title
     private static func localized(_ type: AlertType) -> (title: String, message: String) {
         switch type {
         case .noCamera:
             return (title: "No Camera Found", message: "You don't seem to have a camera on this device.")
+            case .noSourceType:
+            return (title: "Unsupported Source Type", message: "The source type you choose is not available")
         }
     }
     
