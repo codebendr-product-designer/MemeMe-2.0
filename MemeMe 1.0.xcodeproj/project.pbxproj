@@ -68,12 +68,12 @@
 			children = (
 				9FCB3986232C1D7300FF8E71 /* Modals */,
 				9F37590D2329D25C00ED1272 /* AppDelegate.swift */,
+				9FCB3991232D696400FF8E71 /* TextFieldDelegate.swift */,
 				9F3759112329D25C00ED1272 /* MemeViewController.swift */,
 				9F3759132329D25C00ED1272 /* Main.storyboard */,
 				9F3759162329D26500ED1272 /* Assets.xcassets */,
 				9F3759182329D26500ED1272 /* LaunchScreen.storyboard */,
 				9F37591B2329D26500ED1272 /* Info.plist */,
-				9FCB3991232D696400FF8E71 /* TextFieldDelegate.swift */,
 			);
 			path = "MemeMe 1.0";
 			sourceTree = "<group>";

@@ -24,14 +24,17 @@ class MemeViewController: UIViewController {
         btnCameraRoll.sourceType = .photoLibrary
         
         let textFieldDelegate = TextFieldDelegate()
-        txtBottom.delegate = textFieldDelegate
+        txtTop.placeholder = "TOP"
         txtTop.delegate = textFieldDelegate
+        txtBottom.placeholder = "BOTTOM"
+        txtBottom.delegate = textFieldDelegate
+        
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
-        
-        var pickImageController: UIImagePickerController?
-        
+
+        let imagePicker = UIImagePickerController()
+
         switch sender.sourceType {
         case .camera:
             guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -40,36 +43,26 @@ class MemeViewController: UIViewController {
                 sender.isEnabled = false
                 return
             }
-            pickImageController = pickImage(with: .camera)
+            imagePicker.sourceType = .camera
             
         case .photoLibrary :
-            pickImageController = pickImage(with: .photoLibrary)
+            imagePicker.sourceType = .photoLibrary
             
         default :
-            let alert = Alerts.show(type: .noSourceType)
+            let alert = Alerts.show(type: .noSource)
             present(alert, animated: true, completion: nil)
-        }
-        
-        guard let pickImage = pickImageController else {
             return
         }
         
-        present(pickImage, animated: true, completion: nil)
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
         
     }
-    
-    
+ 
 }
 
 //MARK: UIImagePickerControllerDelegate
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func pickImage(with type: UIImagePickerController.SourceType) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = type
-        return imagePicker
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -77,7 +70,6 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
             self.imgMeme.image = image
         }
         self.dismiss(animated: true, completion: nil)
-        
     }
     
 }

@@ -18,4 +18,20 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
         }
         return true
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if var text = textField.text {
+                  print(text)
+                  if text == "TOP" || text == "BOTTOM" {
+                      text = ""
+                  }
+              }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        
+        return true
+    }
 }

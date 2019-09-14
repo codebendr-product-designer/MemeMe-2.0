@@ -12,7 +12,7 @@ struct Alerts {
     
     enum AlertType {
         case noCamera
-        case noSourceType
+        case noSource
     }
     
     static let DismissAlert = "Dismiss"
@@ -23,7 +23,7 @@ struct Alerts {
         switch type {
         case .noCamera:
             return (title: "No Camera Found", message: "You don't seem to have a camera on this device.")
-            case .noSourceType:
+            case .noSource:
             return (title: "Unsupported Source Type", message: "The source type you choose is not available")
         }
     }
