@@ -93,6 +93,8 @@
                         <outlet property="btnCamera" destination="IDv-EJ-UqA" id="fFF-4w-xdt"/>
                         <outlet property="btnCameraRoll" destination="COi-yN-asN" id="Ivr-ny-jzq"/>
                         <outlet property="imgMeme" destination="FI7-CB-N2B" id="eQM-Fv-HoS"/>
+                        <outlet property="txtBottom" destination="ikf-cG-F1a" id="T2N-dF-Rqa"/>
+                        <outlet property="txtTop" destination="fJQ-Jg-mmc" id="g2m-Oz-d0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

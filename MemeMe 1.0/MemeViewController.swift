@@ -13,15 +13,19 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var imgMeme: UIImageView!
     @IBOutlet weak var btnCamera: PickerImageButton!
     @IBOutlet weak var btnCameraRoll: PickerImageButton!
+    @IBOutlet weak var txtTop: UITextField!
+    @IBOutlet weak var txtBottom: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.hideKeyboardWhenTappedAround()
+        
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
+        
+        let textFieldDelegate = TextFieldDelegate()
+        txtBottom.delegate = textFieldDelegate
+        txtTop.delegate = textFieldDelegate
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
@@ -33,10 +37,11 @@ class MemeViewController: UIViewController {
             guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
                 let alert = Alerts.show(type: .noCamera)
                 present(alert, animated: true, completion: nil)
+                sender.isEnabled = false
                 return
             }
             pickImageController = pickImage(with: .camera)
-   
+            
         case .photoLibrary :
             pickImageController = pickImage(with: .photoLibrary)
             
@@ -75,5 +80,18 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
         
     }
     
+}
+
+//MARK: hideKeyboardWhenTappedAround
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
