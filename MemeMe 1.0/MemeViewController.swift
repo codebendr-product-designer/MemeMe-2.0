@@ -41,7 +41,6 @@ class MemeViewController: UIViewController {
             pickImageController = pickImage(with: .photoLibrary)
             
         default :
-            //this will never be called.
             let alert = Alerts.show(type: .noSourceType)
             present(alert, animated: true, completion: nil)
         }
