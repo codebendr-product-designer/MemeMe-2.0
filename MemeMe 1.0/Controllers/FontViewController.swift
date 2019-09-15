@@ -9,22 +9,38 @@
 import UIKit
 
 class FontViewController: UIViewController {
+    
+    var fontFamilyNames = UIFont.familyNames
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(fontFamilyNames.count)
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: UIPickerViewDataSource
+extension FontViewController: UIPickerViewDataSource {
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fontFamilyNames.count
     }
-    */
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+}
+
+//MARK: UIPickerViewDelegate
+extension FontViewController: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return fontFamilyNames[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //self.textField.text = self.titles[row]
+    }
 }
