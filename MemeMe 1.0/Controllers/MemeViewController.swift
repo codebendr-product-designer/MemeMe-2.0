@@ -20,7 +20,6 @@ class MemeViewController: UIViewController {
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
     let fontNotificationKey = "font.notificationKey"
-    let font = ""
     var defaultTextAttributes: [NSAttributedString.Key: Any] {
         
         //lets center text because IB text is not working
@@ -52,6 +51,7 @@ class MemeViewController: UIViewController {
 
         txtBottom.delegate = self
         txtBottom.defaultTextAttributes = defaultTextAttributes
+        
         
     }
     

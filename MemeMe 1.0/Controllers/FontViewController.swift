@@ -18,21 +18,15 @@ class FontViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-print("fontSegue")
-        if segue.identifier == "fontSegue" {
-            let fontVC = segue.destination as! FontViewController
-            fontVC.font = font
-        }
-    }
-    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func useButtonPressed(_ sender: Any) {
-      //  dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        if !font.isEmpty {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: fontNotificationKey), object: font)
+        }
+       dismiss(animated: true, completion: nil)
     }
     
 }
@@ -59,6 +53,5 @@ extension FontViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         font = fontFamilyNames[row]
-        NotificationCenter.default.post(name: Notification.Name(rawValue: fontNotificationKey), object: font)
     }
 }

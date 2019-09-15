@@ -16,16 +16,18 @@ extension MemeViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateFonts), name: NSNotification.Name(rawValue: fontNotificationKey), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateFonts(_:)), name: NSNotification.Name(rawValue: fontNotificationKey), object: nil)
         
     }
     
-    @objc func updateFonts() {
-        if !font.isEmpty {
-                txtTop.font = UIFont(name: font, size: 40)!
-                txtBottom.font = UIFont(name: font, size: 40)!
-            }
+    @objc func updateFonts(_ notification: NSNotification){
+        
+        if let font = notification.object as? String {
+            txtTop.font = UIFont(name: font, size: 40)!
+            txtBottom.font = UIFont(name: font, size: 40)!
+            print(font)
+        }
+        
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -34,7 +36,7 @@ extension MemeViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: fontNotificationKey), object: nil)
+        //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: fontNotificationKey), object: nil)
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -59,4 +61,10 @@ extension MemeViewController {
         return keyboardSize.cgRectValue.height
     }
     
+}
+
+extension Notification.Name {
+    static let didCreateShoppingList = Notification.Name("didCreateShoppingList")
+    static let didUpdateShoppingList = Notification.Name("didUpdateShoppingList")
+    static let didChooseFontName = Notification.Name("didChooseFontName")
 }
