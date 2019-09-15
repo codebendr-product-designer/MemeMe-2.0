@@ -25,6 +25,7 @@ class MemeViewController: UIViewController {
         
         txtTop.placeholder = "TOP"
         txtTop.delegate = self
+        
         txtBottom.placeholder = "BOTTOM"
         txtBottom.delegate = self
         
