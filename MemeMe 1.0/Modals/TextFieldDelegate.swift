@@ -16,10 +16,13 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
         if var text = textField.text, text.isEmpty {
             text = "TOP"
         }
+        print("textFieldShouldReturn")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+         print("textFieldDidBeginEditing")
+        textField.text = ""
         if var text = textField.text {
                   print(text)
                   if text == "TOP" || text == "BOTTOM" {
@@ -28,9 +31,21 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
               }
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+          print("textFieldEndBeginEditing")
+         textField.text = ""
+         if var text = textField.text {
+                   print(text)
+                   if text == "TOP" || text == "BOTTOM" {
+                       text = ""
+                   }
+               }
+     }
+    
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
+          print("shouldChangeCharactersIn")
         
         return true
     }

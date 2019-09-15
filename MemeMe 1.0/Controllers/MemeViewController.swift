@@ -18,7 +18,7 @@ class MemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.hideKeyboardWhenTappedAround()
+       // super.hideKeyboardWhenTappedAround()
         
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
@@ -75,15 +75,15 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 //MARK: hideKeyboardWhenTappedAround
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+//extension UIViewController {
+//    func hideKeyboardWhenTappedAround() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+//        tap.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+//}
 
