@@ -31,6 +31,18 @@ class MemeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
+    
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
 
         let imagePicker = UIImagePickerController()
@@ -74,16 +86,5 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
     
 }
 
-//MARK: hideKeyboardWhenTappedAround
-//extension UIViewController {
-//    func hideKeyboardWhenTappedAround() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
+
 
