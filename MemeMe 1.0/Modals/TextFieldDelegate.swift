@@ -21,31 +21,31 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-         print("textFieldDidBeginEditing")
+        print("textFieldDidBeginEditing")
         textField.text = ""
         if var text = textField.text {
-                  print(text)
-                  if text == "TOP" || text == "BOTTOM" {
-                      text = ""
-                  }
-              }
+            print(text)
+            if text == "TOP" || text == "BOTTOM" {
+                text = ""
+            }
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-          print("textFieldEndBeginEditing")
-         textField.text = ""
-         if var text = textField.text {
-                   print(text)
-                   if text == "TOP" || text == "BOTTOM" {
-                       text = ""
-                   }
-               }
-     }
+        print("textFieldEndBeginEditing")
+        textField.text = ""
+        if var text = textField.text {
+            print(text)
+            if text == "TOP" || text == "BOTTOM" {
+                text = ""
+            }
+        }
+    }
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-          print("shouldChangeCharactersIn")
+        print("shouldChangeCharactersIn")
         
         return true
     }
