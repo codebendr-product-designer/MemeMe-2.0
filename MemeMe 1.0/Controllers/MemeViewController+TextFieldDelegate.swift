@@ -28,7 +28,6 @@ extension MemeViewController: UITextFieldDelegate {
         
         if textField.text?.isEmpty ?? true {
             textField.text = txtDefault
-            textField.attributedText = TextAttributes.defaults(text: txtDefault)
         }
     }
     

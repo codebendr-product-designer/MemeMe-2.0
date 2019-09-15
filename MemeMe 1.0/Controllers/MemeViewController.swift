@@ -15,42 +15,57 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var btnCameraRoll: PickerImageButton!
     @IBOutlet weak var txtTop: UITextField!
     @IBOutlet weak var txtBottom: UITextField!
+    
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
+    var defaultTextAttributes: [NSAttributedString.Key: Any] {
+        
+        //lets center text because IB text is not working
+        let titleParagraphStyle = NSMutableParagraphStyle()
+        titleParagraphStyle.alignment = .center
+        
+        return [ NSAttributedString.Key.strokeColor: UIColor.black,
+                 NSAttributedString.Key.foregroundColor: UIColor.white,
+                 NSAttributedString.Key.font: UIFont(name: "impact", size: 40)!,
+                 NSAttributedString.Key.strokeWidth: -4.0,
+                 NSAttributedString.Key.paragraphStyle: titleParagraphStyle
+        ]
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       super.hideKeyboardWhenTappedAround()
+        super.hideKeyboardWhenTappedAround()
         
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
         
-      //  txtTop.placeholder = "TOP"
+        //  txtTop.placeholder = "TOP"
         txtTop.delegate = self
-       txtTop.attributedText = TextAttributes.defaults(text: txtDefault)
+        txtTop.defaultTextAttributes = defaultTextAttributes
         
-     //   txtBottom.placeholder = "BOTTOM"
+        //   txtBottom.placeholder = "BOTTOM"
         txtBottom.delegate = self
-        txtBottom.attributedText = TextAttributes.defaults(text: txtDefault)
+        txtBottom.defaultTextAttributes = defaultTextAttributes
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
-
+        
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
-
+        
         let imagePicker = UIImagePickerController()
-
+        
         switch sender.sourceType {
         case .camera:
             guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -74,7 +89,7 @@ class MemeViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
         
     }
- 
+    
 }
 
 //MARK: UIImagePickerControllerDelegate
