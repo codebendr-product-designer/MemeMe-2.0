@@ -41,10 +41,10 @@ struct Alerts {
     }
     
     static func show(type: AlertType, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
-         let alert = UIAlertController(title: Alerts.localized(type).title, message: Alerts.localized(type).message, preferredStyle: .alert)
+        let alert = UIAlertController(title: Alerts.localized(type).title, message: Alerts.localized(type).message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
-         alert.addAction(UIAlertAction(title: "YES", style: .default, handler: handler))
-         return alert
-     }
+        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: handler))
+        return alert
+    }
     
 }
