@@ -63,6 +63,9 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="refresh" id="NuS-TA-xyi">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="eraseMemeButtonPressed:" destination="BYZ-38-t0r" id="tBn-6W-NLt"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -102,6 +105,7 @@
                         <outlet property="btnCamera" destination="IDv-EJ-UqA" id="fFF-4w-xdt"/>
                         <outlet property="btnCameraRoll" destination="COi-yN-asN" id="Ivr-ny-jzq"/>
                         <outlet property="img" destination="FI7-CB-N2B" id="NcY-8j-dbu"/>
+                        <outlet property="toolBarBottom" destination="pO3-fX-ah6" id="bsJ-OE-rZI"/>
                         <outlet property="txtBottom" destination="ikf-cG-F1a" id="T2N-dF-Rqa"/>
                         <outlet property="txtTop" destination="fJQ-Jg-mmc" id="g2m-Oz-d0f"/>
                     </connections>

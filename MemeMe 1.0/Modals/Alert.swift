@@ -14,6 +14,7 @@ struct Alerts {
         case noCamera
         case noSource
         case noText
+        case eraseMeme
     }
     
     static let DismissAlert = "Dismiss"
@@ -24,10 +25,12 @@ struct Alerts {
         switch type {
         case .noCamera:
             return (title: "No Camera Found", message: "You don't seem to have a camera on this device.")
-            case .noSource:
+        case .noSource:
             return (title: "Unsupported Source Type", message: "The source type you choose is not available")
-            case .noText:
+        case .noText:
             return (title: "Edit Text", message: "Edit text to share your meme with friends")
+        case .eraseMeme:
+            return (title: "Erase Your Meme", message: "Are you sure you want to erase your meme?")
         }
     }
     
@@ -36,5 +39,12 @@ struct Alerts {
         alert.addAction(UIAlertAction(title: Alerts.DismissAlert, style: .default, handler: nil))
         return alert
     }
+    
+    static func show(type: AlertType, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
+         let alert = UIAlertController(title: Alerts.localized(type).title, message: Alerts.localized(type).message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
+         alert.addAction(UIAlertAction(title: "YES", style: .default, handler: handler))
+         return alert
+     }
     
 }

@@ -15,6 +15,7 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var btnCameraRoll: PickerImageButton!
     @IBOutlet weak var txtTop: UITextField!
     @IBOutlet weak var txtBottom: UITextField!
+    @IBOutlet weak var toolBarBottom: UIToolbar!
     
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
@@ -34,18 +35,20 @@ class MemeViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.hideKeyboardWhenTappedAround()
+      //  super.hideKeyboardWhenTappedAround()
         
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
         
-        //  txtTop.placeholder = "TOP"
         txtTop.delegate = self
         txtTop.defaultTextAttributes = defaultTextAttributes
-        
-        //   txtBottom.placeholder = "BOTTOM"
+
         txtBottom.delegate = self
         txtBottom.defaultTextAttributes = defaultTextAttributes
         
@@ -61,6 +64,15 @@ class MemeViewController: UIViewController {
         
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    @IBAction func eraseMemeButtonPressed(_ sender: Any) {
+        let alert =  Alerts.show(type: .eraseMeme) { _ in
+            self.txtTop.text = self.txtDefault
+            self.txtBottom.text = self.txtDefault
+            self.img.image = UIImage(named: "default-meme")
+        }
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
@@ -96,27 +108,26 @@ class MemeViewController: UIViewController {
 //MARK: UIImagePickerControllerDelegate
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func configureUI (isShow: Bool) {
-        
+    func configureUI (isShowing: Bool) {
+        toolBarBottom.isHidden = isShowing
+        navigationController?.setNavigationBarHidden(isShowing, animated: true)
     }
     
     func generateMemedImage() -> UIImage {
         
-        navigationController?.setToolbarHidden(true, animated: true)
+        configureUI(isShowing: true)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let memedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
-        navigationController?.setToolbarHidden(false, animated: true)
         
         return memedImage
     }
     
     @IBAction func shareButtonPressed() {
         
-        if txtTop.text == txtDefault && txtBottom.text == txtDefault {
+        if txtTop.text == txtDefault || txtBottom.text == txtDefault {
             
             let alert = Alerts.show(type: .noText)
             present(alert, animated: true, completion: nil)
@@ -134,14 +145,15 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func shareImage(image: UIImage) {
         
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            
-            activityViewController.completionWithItemsHandler = { activity, completed, items, error in
-            
-            if completed {
-                self.dismiss(animated: true, completion: nil)
-                
-            }
+        
+        activityViewController.completionWithItemsHandler = {
+            activity, completed, items, error in
+            self.configureUI(isShowing: false)
         }
+        
+        
+        present(activityViewController, animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
