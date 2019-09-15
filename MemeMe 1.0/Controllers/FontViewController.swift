@@ -23,7 +23,7 @@ class FontViewController: UIViewController {
     
     @IBAction func useButtonPressed(_ sender: Any) {
         if !font.isEmpty {
-            NotificationCenter.default.post(name:.didChooseFontName, object: font)
+            NotificationCenter.default.post(name: .didChooseFontName, object: font)
         }
        dismiss(animated: true, completion: nil)
     }
