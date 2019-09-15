@@ -23,11 +23,15 @@ class MemeViewController: UIViewController {
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
         
+        let textAttributes = TextAttributes().font().fill().stroke().build()
+        
         txtTop.placeholder = "TOP"
         txtTop.delegate = self
+        txtTop.defaultTextAttributes = textAttributes
         
         txtBottom.placeholder = "BOTTOM"
         txtBottom.delegate = self
+        txtBottom.defaultTextAttributes = textAttributes
         
     }
     
