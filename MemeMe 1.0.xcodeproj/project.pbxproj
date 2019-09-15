@@ -14,7 +14,7 @@
 		9F37591A2329D26500ED1272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3759182329D26500ED1272 /* LaunchScreen.storyboard */; };
 		9F404E5F232DD0AA0011DF1B /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F404E5E232DD0AA0011DF1B /* impact.ttf */; };
 		9F404E65232DD61B0011DF1B /* MemeViewController+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F404E64232DD61B0011DF1B /* MemeViewController+Notifications.swift */; };
-		9F404E67232DD8180011DF1B /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F404E66232DD8180011DF1B /* UIViewController+Keyboard.swift */; };
+		9F404E67232DD8180011DF1B /* UIViewController+UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F404E66232DD8180011DF1B /* UIViewController+UITapGestureRecognizer.swift */; };
 		9FCB3988232C1D8B00FF8E71 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB3987232C1D8B00FF8E71 /* Text.swift */; };
 		9FCB398A232C1DB800FF8E71 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB3989232C1DB800FF8E71 /* Image.swift */; };
 		9FCB398C232C1E1C00FF8E71 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB398B232C1E1C00FF8E71 /* Meme.swift */; };
@@ -33,7 +33,7 @@
 		9F37591B2329D26500ED1272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F404E5E232DD0AA0011DF1B /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 		9F404E64232DD61B0011DF1B /* MemeViewController+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemeViewController+Notifications.swift"; sourceTree = "<group>"; };
-		9F404E66232DD8180011DF1B /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		9F404E66232DD8180011DF1B /* UIViewController+UITapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UITapGestureRecognizer.swift"; sourceTree = "<group>"; };
 		9FCB3987232C1D8B00FF8E71 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		9FCB3989232C1DB800FF8E71 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9FCB398B232C1E1C00FF8E71 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		9F37590C2329D25B00ED1272 /* MemeMe 1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				9F404E63232DD5BD0011DF1B /* Extensions */,
 				9F37591B2329D26500ED1272 /* Info.plist */,
 				9F3759182329D26500ED1272 /* LaunchScreen.storyboard */,
 				9F404E61232DD1210011DF1B /* Controllers */,
@@ -97,17 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				9F3759112329D25C00ED1272 /* MemeViewController.swift */,
+				9F404E64232DD61B0011DF1B /* MemeViewController+Notifications.swift */,
+				9F404E66232DD8180011DF1B /* UIViewController+UITapGestureRecognizer.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		9F404E63232DD5BD0011DF1B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9F404E64232DD61B0011DF1B /* MemeViewController+Notifications.swift */,
-				9F404E66232DD8180011DF1B /* UIViewController+Keyboard.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9FCB3986232C1D7300FF8E71 /* Modals */ = {
@@ -200,7 +192,7 @@
 				9F3759122329D25C00ED1272 /* MemeViewController.swift in Sources */,
 				9F37590E2329D25C00ED1272 /* AppDelegate.swift in Sources */,
 				9FCB3988232C1D8B00FF8E71 /* Text.swift in Sources */,
-				9F404E67232DD8180011DF1B /* UIViewController+Keyboard.swift in Sources */,
+				9F404E67232DD8180011DF1B /* UIViewController+UITapGestureRecognizer.swift in Sources */,
 				9FCB398C232C1E1C00FF8E71 /* Meme.swift in Sources */,
 				9FCB398A232C1DB800FF8E71 /* Image.swift in Sources */,
 				9FCB3992232D696400FF8E71 /* TextFieldDelegate.swift in Sources */,

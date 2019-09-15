@@ -18,7 +18,7 @@ class MemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // super.hideKeyboardWhenTappedAround()
+       super.hideKeyboardWhenTappedAround()
         
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
