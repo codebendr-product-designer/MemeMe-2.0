@@ -100,7 +100,7 @@
                         <barButtonItem key="rightBarButtonItem" title="FONTS" id="Itp-Z0-fDR">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="0p6-GT-xT2" kind="presentation" id="NcS-BS-9Kl"/>
+                                <action selector="fontButtonPressed:" destination="BYZ-38-t0r" id="ZmB-n9-RTs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -111,6 +111,7 @@
                         <outlet property="toolBarBottom" destination="pO3-fX-ah6" id="bsJ-OE-rZI"/>
                         <outlet property="txtBottom" destination="ikf-cG-F1a" id="T2N-dF-Rqa"/>
                         <outlet property="txtTop" destination="fJQ-Jg-mmc" id="g2m-Oz-d0f"/>
+                        <segue destination="0p6-GT-xT2" kind="presentation" identifier="fontSegue" id="5yA-vm-Waa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,13 +138,21 @@
                                 <rect key="frame" x="0.0" y="431" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="M9n-Bf-mtA"/>
+                                    <barButtonItem systemItem="cancel" id="M9n-Bf-mtA">
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="0p6-GT-xT2" id="L7G-Yn-urk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ySp-xD-W7y"/>
                                     <barButtonItem title="Choose Font" style="plain" id="aUi-wk-Dmf">
                                         <color key="tintColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pTQ-Vk-Hhu"/>
-                                    <barButtonItem title="Use" id="0GC-Ew-SKD"/>
+                                    <barButtonItem title="Use" id="0GC-Ew-SKD">
+                                        <connections>
+                                            <action selector="useButtonPressed:" destination="0p6-GT-xT2" id="35U-Z0-bpF"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONE DOES NOT SIMPLY CHOOSE A FONT " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-x9-jSe">

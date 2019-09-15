@@ -19,6 +19,8 @@ class MemeViewController: UIViewController {
     
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
+    let fontNotificationKey = "font.notificationKey"
+    let font = ""
     var defaultTextAttributes: [NSAttributedString.Key: Any] {
         
         //lets center text because IB text is not working
@@ -57,6 +59,7 @@ class MemeViewController: UIViewController {
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,6 +75,10 @@ class MemeViewController: UIViewController {
             self.img.image = UIImage(named: "default-meme")
         }
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func fontButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "fontSegue", sender: nil)
     }
     
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
