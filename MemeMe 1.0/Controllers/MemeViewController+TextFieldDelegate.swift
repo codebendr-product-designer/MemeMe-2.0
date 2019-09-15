@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TextFieldDelegate: NSObject, UITextFieldDelegate {
+extension MemeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -46,10 +46,10 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard var text = textField.text else {
-            return
+            return false
         }
         
-        print("shouldChangeCharactersIn")
+        print("shouldChangeCharactersIn \(text)")
         
         return true
     }
