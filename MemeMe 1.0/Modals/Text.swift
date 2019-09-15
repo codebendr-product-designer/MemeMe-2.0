@@ -9,6 +9,6 @@
 import Foundation
 
 struct Text {
-   let top: String
-   let bottom: String
+   let top: String = ""
+   let bottom: String = ""
 }

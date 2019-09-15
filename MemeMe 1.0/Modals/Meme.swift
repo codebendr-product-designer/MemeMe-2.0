@@ -6,9 +6,11 @@
 //  Copyright © 2019 just pixel. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Meme {
-    let text: Text
-    let image: Image
+    let topText: String
+    let bottom: String
+    let originalImage: UIImage
+    let memedImage: UIImage
 }

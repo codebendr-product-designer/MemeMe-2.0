@@ -24,11 +24,12 @@ class MemeViewController: UIViewController {
         let titleParagraphStyle = NSMutableParagraphStyle()
         titleParagraphStyle.alignment = .center
         
-        return [ NSAttributedString.Key.strokeColor: UIColor.black,
-                 NSAttributedString.Key.foregroundColor: UIColor.white,
-                 NSAttributedString.Key.font: UIFont(name: "impact", size: 40)!,
-                 NSAttributedString.Key.strokeWidth: -4.0,
-                 NSAttributedString.Key.paragraphStyle: titleParagraphStyle
+        return [
+            NSAttributedString.Key.strokeColor: UIColor.black,
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "impact", size: 40)!,
+            NSAttributedString.Key.strokeWidth: -4.0,
+            NSAttributedString.Key.paragraphStyle: titleParagraphStyle
         ]
         
     }
@@ -94,6 +95,26 @@ class MemeViewController: UIViewController {
 
 //MARK: UIImagePickerControllerDelegate
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func generateMemedImage() -> UIImage {
+
+        // TODO: Hide toolbar and navbar
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        // TODO: Show toolbar and navbar
+
+        return memedImage
+    }
+    
+    func save() {
+         
+       
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
