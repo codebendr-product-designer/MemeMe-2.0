@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <color key="backgroundColor" red="0.074510954320430756" green="0.074508346617221832" blue="0.074508853256702423" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
-                                <rect key="frame" x="16" y="60" width="294" height="27"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
+                                <rect key="frame" x="16" y="60" width="288" height="49.5"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-fX-ah6">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
@@ -56,11 +56,11 @@
                                 </items>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-cG-F1a">
-                                <rect key="frame" x="16" y="475" width="320" height="27"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-cG-F1a">
+                                <rect key="frame" x="16" y="452.5" width="288" height="49.5"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.070589356124401093" green="0.070586778223514557" blue="0.070587299764156342" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -73,12 +73,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pO3-fX-ah6" secondAttribute="bottom" id="Is3-vg-CY9"/>
                             <constraint firstItem="fJQ-Jg-mmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="U57-U1-SDA"/>
                             <constraint firstItem="ikf-cG-F1a" firstAttribute="bottom" secondItem="FI7-CB-N2B" secondAttribute="bottom" constant="-16" id="UxJ-AY-mwS"/>
-                            <constraint firstItem="ikf-cG-F1a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="16" id="bBV-wf-VKS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ikf-cG-F1a" secondAttribute="trailing" constant="16" id="bBV-wf-VKS"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="top" secondItem="FI7-CB-N2B" secondAttribute="bottom" id="bYm-UI-tc0"/>
                             <constraint firstItem="FI7-CB-N2B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e5U-5f-HQh"/>
                             <constraint firstItem="FI7-CB-N2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEv-N2-iYA"/>
                             <constraint firstItem="pO3-fX-ah6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qH6-jD-AGP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fJQ-Jg-mmc" secondAttribute="trailing" constant="10" id="yux-dj-hQD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fJQ-Jg-mmc" secondAttribute="trailing" constant="16" id="yux-dj-hQD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

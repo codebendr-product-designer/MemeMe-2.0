@@ -8,7 +8,7 @@
 
 import UIKit
 
-//lets extent attributed text so we can handle expansion of text attributes in the future
+//lets composite attributed text so we can handle expansion of text attributes in the future
 /*
  psuedo
  sameText.attributedText = AttributedText("hellow world",text: "world").change(color: "#000000").medium(font: 20).build()

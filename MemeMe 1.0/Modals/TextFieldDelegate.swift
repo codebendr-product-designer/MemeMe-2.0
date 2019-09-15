@@ -45,6 +45,10 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        guard var text = textField.text else {
+            return
+        }
+        
         print("shouldChangeCharactersIn")
         
         return true
