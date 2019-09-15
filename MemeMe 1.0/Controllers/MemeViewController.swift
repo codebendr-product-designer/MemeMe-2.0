@@ -19,7 +19,6 @@ class MemeViewController: UIViewController {
     
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
-    let fontNotificationKey = "font.notificationKey"
     var defaultTextAttributes: [NSAttributedString.Key: Any] {
         
         //lets center text because IB text is not working

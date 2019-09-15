@@ -11,7 +11,6 @@ import UIKit
 class FontViewController: UIViewController {
     
     var fontFamilyNames = UIFont.familyNames
-    let fontNotificationKey = "font.notificationKey"
     var font = ""
     
     override func viewDidLoad() {
@@ -24,7 +23,7 @@ class FontViewController: UIViewController {
     
     @IBAction func useButtonPressed(_ sender: Any) {
         if !font.isEmpty {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: fontNotificationKey), object: font)
+            NotificationCenter.default.post(name:.didChooseFontName, object: font)
         }
        dismiss(animated: true, completion: nil)
     }
