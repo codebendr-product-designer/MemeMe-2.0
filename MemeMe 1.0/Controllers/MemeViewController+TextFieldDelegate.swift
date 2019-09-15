@@ -17,27 +17,24 @@ extension MemeViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         if textField.text == txtDefault {
             textField.text = txtEmpty
         }
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         if textField.text?.isEmpty ?? true {
             textField.text = txtDefault
         }
     }
-    
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var text = textField.text as NSString?
         text = text!.replacingCharacters(in: range, with: string) as NSString?
         
-        //force capitalization for copied test
+        //force capitalization for copied text
+        //IB doesn't enforce it
         textField.text = text?.uppercased
         
         return false

@@ -21,7 +21,8 @@ class MemeViewController: UIViewController {
     let txtEmpty = ""
     var defaultTextAttributes: [NSAttributedString.Key: Any] {
         
-        //lets center text because IB text is not working
+        //lets center text because IB text centering is not working
+        //when attributed string are set
         let titleParagraphStyle = NSMutableParagraphStyle()
         titleParagraphStyle.alignment = .center
         
@@ -36,7 +37,7 @@ class MemeViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     override func viewDidLoad() {
@@ -47,32 +48,30 @@ class MemeViewController: UIViewController {
         
         txtTop.delegate = self
         txtTop.defaultTextAttributes = defaultTextAttributes
-
+        
         txtBottom.delegate = self
         txtBottom.defaultTextAttributes = defaultTextAttributes
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
     
     @IBAction func eraseMemeButtonPressed(_ sender: Any) {
+        
         let alert =  Alerts.show(type: .eraseMeme) { _ in
             self.txtTop.text = self.txtDefault
             self.txtBottom.text = self.txtDefault
             self.img.image = UIImage(named: "default-meme")
         }
+        
         present(alert, animated: true, completion: nil)
     }
     
@@ -156,8 +155,7 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
             activity, completed, items, error in
             self.configureUI(isShowing: false)
         }
-        
-        
+
         present(activityViewController, animated: true)
         
     }

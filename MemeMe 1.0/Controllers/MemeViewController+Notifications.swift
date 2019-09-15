@@ -21,12 +21,10 @@ extension MemeViewController {
     }
     
     @objc func updateFonts(_ notification: NSNotification){
-        
         if let font = notification.object as? String {
             txtTop.font = UIFont(name: font, size: 40)!
             txtBottom.font = UIFont(name: font, size: 40)!
         }
-        
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -39,24 +37,18 @@ extension MemeViewController {
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        
         if txtBottom.isFirstResponder {
-            
             view.frame.origin.y -= getKeyboardHeight(notification)
-            
         }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        
         view.frame.origin.y = 0
     }
     
-    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
-        
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
     
