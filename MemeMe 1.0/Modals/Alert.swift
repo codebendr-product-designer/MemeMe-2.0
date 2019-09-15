@@ -13,6 +13,7 @@ struct Alerts {
     enum AlertType {
         case noCamera
         case noSource
+        case noText
     }
     
     static let DismissAlert = "Dismiss"
@@ -25,6 +26,8 @@ struct Alerts {
             return (title: "No Camera Found", message: "You don't seem to have a camera on this device.")
             case .noSource:
             return (title: "Unsupported Source Type", message: "The source type you choose is not available")
+            case .noText:
+            return (title: "Edit Text", message: "Edit text to share your meme with friends")
         }
     }
     
@@ -32,6 +35,6 @@ struct Alerts {
         let alert = UIAlertController(title: Alerts.localized(type).title, message: Alerts.localized(type).message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Alerts.DismissAlert, style: .default, handler: nil))
         return alert
-        
     }
+    
 }

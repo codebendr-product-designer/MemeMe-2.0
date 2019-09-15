@@ -10,7 +10,7 @@ import UIKit
 
 class MemeViewController: UIViewController {
     
-    @IBOutlet weak var imgMeme: UIImageView!
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var btnCamera: PickerImageButton!
     @IBOutlet weak var btnCameraRoll: PickerImageButton!
     @IBOutlet weak var txtTop: UITextField!
@@ -96,30 +96,58 @@ class MemeViewController: UIViewController {
 //MARK: UIImagePickerControllerDelegate
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    func configureUI (isShow: Bool) {
+        
+    }
+    
     func generateMemedImage() -> UIImage {
-
-        // TODO: Hide toolbar and navbar
-
-        // Render view to an image
+        
+        navigationController?.setToolbarHidden(true, animated: true)
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
-        // TODO: Show toolbar and navbar
-
+        
+        navigationController?.setToolbarHidden(false, animated: true)
+        
         return memedImage
     }
     
-    func save() {
-         
-       
+    @IBAction func shareButtonPressed() {
+        
+        if txtTop.text == txtDefault && txtBottom.text == txtDefault {
+            
+            let alert = Alerts.show(type: .noText)
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            let memedImage = generateMemedImage()
+            let meme = Meme(topText: txtTop.text!, bottomText: txtBottom.text!, originalImage: img.image!, memedImage: memedImage)
+            
+            shareImage(image: meme.memedImage)
+        }
+        
+    }
+    
+    func shareImage(image: UIImage) {
+        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            
+            activityViewController.completionWithItemsHandler = { activity, completed, items, error in
+            
+            if completed {
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.originalImage] as? UIImage {
-            self.imgMeme.image = image
+            self.img.image = image
         }
         self.dismiss(animated: true, completion: nil)
     }

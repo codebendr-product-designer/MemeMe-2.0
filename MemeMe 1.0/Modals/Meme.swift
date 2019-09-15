@@ -10,7 +10,7 @@ import UIKit
 
 struct Meme {
     let topText: String
-    let bottom: String
+    let bottomText: String
     let originalImage: UIImage
     let memedImage: UIImage
 }
