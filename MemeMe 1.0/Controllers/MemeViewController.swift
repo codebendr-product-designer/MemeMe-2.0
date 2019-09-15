@@ -77,6 +77,7 @@ class MemeViewController: UIViewController {
     @IBAction func pickImageFromSource(_ sender: PickerImageButton) {
         
         let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
         
         switch sender.sourceType {
         case .camera:
@@ -157,7 +158,7 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[.originalImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
             self.img.image = image
         }
         self.dismiss(animated: true, completion: nil)

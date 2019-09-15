@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vx9-rI-Wcr">
-    <device id="retina4_0" orientation="landscape" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -18,27 +18,27 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="FI7-CB-N2B">
-                                <rect key="frame" x="0.0" y="32" width="568" height="238"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="474"/>
+                                <color key="backgroundColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEXT GOES HERE" placeholder="TEXT GOES HERE" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-cG-F1a">
-                                <rect key="frame" x="16" y="203.5" width="536" height="50.5"/>
+                                <rect key="frame" x="16" y="451.5" width="288" height="50.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEXT GOES HERE" placeholder="TEXT GOES HERE" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-Jg-mmc">
-                                <rect key="frame" x="16" y="48" width="536" height="50.5"/>
+                                <rect key="frame" x="16" y="60" width="288" height="50.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-fX-ah6">
-                                <rect key="frame" x="0.0" y="270" width="568" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6DA-rX-P5b"/>
                                 </constraints>
@@ -99,6 +99,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="FONTS" id="Itp-Z0-fDR">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="0p6-GT-xT2" kind="presentation" id="NcS-BS-9Kl"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -114,13 +117,57 @@
             </objects>
             <point key="canvasLocation" x="1046.25" y="128.87323943661971"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5em-j5-W81">
+            <objects>
+                <viewController id="0p6-GT-xT2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pIi-SG-fYo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28i-mL-yJY">
+                                <rect key="frame" x="0.0" y="332" width="320" height="216"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euO-lR-LFm">
+                                <rect key="frame" x="0.0" y="332" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="M9n-Bf-mtA"/>
+                                    <barButtonItem width="171" style="plain" systemItem="fixedSpace" id="ySp-xD-W7y"/>
+                                    <barButtonItem title="Done" id="0GC-Ew-SKD"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a font for your meme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdE-vC-hny">
+                                <rect key="frame" x="35" y="48" width="251" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="28i-mL-yJY" firstAttribute="bottom" secondItem="6yA-PR-qXw" secondAttribute="bottom" id="0A9-XF-Jgx"/>
+                            <constraint firstItem="IdE-vC-hny" firstAttribute="leading" secondItem="6yA-PR-qXw" secondAttribute="leading" constant="35" id="A3y-1o-INV"/>
+                            <constraint firstItem="6yA-PR-qXw" firstAttribute="trailing" secondItem="IdE-vC-hny" secondAttribute="trailing" constant="34" id="C3q-IM-F72"/>
+                            <constraint firstItem="28i-mL-yJY" firstAttribute="leading" secondItem="6yA-PR-qXw" secondAttribute="leading" id="MqM-3e-xcp"/>
+                            <constraint firstItem="28i-mL-yJY" firstAttribute="trailing" secondItem="6yA-PR-qXw" secondAttribute="trailing" id="fA5-Ol-RdG"/>
+                            <constraint firstItem="IdE-vC-hny" firstAttribute="top" secondItem="6yA-PR-qXw" secondAttribute="top" constant="48" id="ulI-sW-Xtg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6yA-PR-qXw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ock-tT-mZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888.125" y="128.87323943661971"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DSf-Vi-6I3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vx9-rI-Wcr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t36-Wv-1yp">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </navigationBar>
