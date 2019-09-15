@@ -15,6 +15,8 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var btnCameraRoll: PickerImageButton!
     @IBOutlet weak var txtTop: UITextField!
     @IBOutlet weak var txtBottom: UITextField!
+    let txtDefault = "TEXT GOES HERE"
+    let txtEmpty = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +25,13 @@ class MemeViewController: UIViewController {
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
         
-        let textAttributes = TextAttributes().font().fill().stroke().build()
-        
-        txtTop.placeholder = "TOP"
+      //  txtTop.placeholder = "TOP"
         txtTop.delegate = self
-        txtTop.defaultTextAttributes = textAttributes
+       txtTop.attributedText = TextAttributes.defaults(text: txtDefault)
         
-        txtBottom.placeholder = "BOTTOM"
+     //   txtBottom.placeholder = "BOTTOM"
         txtBottom.delegate = self
-        txtBottom.defaultTextAttributes = textAttributes
+        txtBottom.attributedText = TextAttributes.defaults(text: txtDefault)
         
     }
     

@@ -13,44 +13,34 @@ extension MemeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        if var text = textField.text, text.isEmpty {
-            text = "TOP"
-        }
-        print("textFieldShouldReturn")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing")
-        textField.text = ""
-        if var text = textField.text {
-            print(text)
-            if text == "TOP" || text == "BOTTOM" {
-                text = ""
-            }
+        
+        if textField.text == txtDefault {
+            textField.text = txtEmpty
         }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("textFieldEndBeginEditing")
-        textField.text = ""
-        if var text = textField.text {
-            print(text)
-            if text == "TOP" || text == "BOTTOM" {
-                text = ""
-            }
+        
+        if textField.text?.isEmpty ?? true {
+            textField.text = txtDefault
+            textField.attributedText = TextAttributes.defaults(text: txtDefault)
         }
     }
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard var text = textField.text else {
-            return false
-        }
+        var text = textField.text as NSString?
+        text = text!.replacingCharacters(in: range, with: string) as NSString?
         
-        print("shouldChangeCharactersIn \(text)")
+        //force capitalization for copied test
+        textField.text = text?.uppercased
         
-        return true
+        return false
     }
 }
