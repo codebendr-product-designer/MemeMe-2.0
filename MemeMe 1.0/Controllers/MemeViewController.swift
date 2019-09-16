@@ -56,12 +56,12 @@ class MemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
+        subscribeToNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
+        unsubscribeFromNotifications()
     }
     
     @IBAction func eraseMemeButtonPressed(_ sender: Any) {

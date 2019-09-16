@@ -10,7 +10,7 @@ import UIKit
 
 extension MemeViewController {
     
-    func subscribeToKeyboardNotifications() {
+    func subscribeToNotifications() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -20,7 +20,7 @@ extension MemeViewController {
         
     }
     
-    func unsubscribeFromKeyboardNotifications() {
+    func unsubscribeFromNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         
