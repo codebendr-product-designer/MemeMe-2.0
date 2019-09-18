@@ -19,22 +19,6 @@ class MemeViewController: UIViewController {
     
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
-    var defaultTextAttributes: [NSAttributedString.Key: Any] {
-        
-        //lets center text because IB text centering is not working
-        //when attributed string are set
-        let titleParagraphStyle = NSMutableParagraphStyle()
-        titleParagraphStyle.alignment = .center
-        
-        return [
-            NSAttributedString.Key.strokeColor: UIColor.black,
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "impact", size: 40)!,
-            NSAttributedString.Key.strokeWidth: -4.0,
-            NSAttributedString.Key.paragraphStyle: titleParagraphStyle
-        ]
-        
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -46,11 +30,8 @@ class MemeViewController: UIViewController {
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary
         
-        txtTop.delegate = self
-        txtTop.defaultTextAttributes = defaultTextAttributes
-        
-        txtBottom.delegate = self
-        txtBottom.defaultTextAttributes = defaultTextAttributes
+        configureTextField(txtTop)
+        configureTextField(txtBottom)
         
     }
     
@@ -110,8 +91,22 @@ class MemeViewController: UIViewController {
     
 }
 
-//MARK: UIImagePickerControllerDelegate
-extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//MARK: Private Methods
+extension MemeViewController {
+    
+    func configureTextField(_ textField: UITextField) {
+        textField.defaultTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+            NSAttributedString.Key.strokeColor : UIColor.black,
+            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedString.Key.strokeWidth: -4.0,
+        ]
+        textField.textColor = UIColor.white
+        textField.tintColor = UIColor.white
+        textField.textAlignment = .center
+        textField.text = txtDefault
+        textField.delegate = self
+    }
     
     func configureUI (isShowing: Bool) {
         toolBarBottom.isHidden = isShowing
@@ -129,6 +124,11 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
         
         return memedImage
     }
+    
+}
+
+//MARK: UIImagePickerControllerDelegate
+extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func shareButtonPressed() {
         
