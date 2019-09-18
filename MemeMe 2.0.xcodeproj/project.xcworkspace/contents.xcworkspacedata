@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MemeMe 1.0.xcodeproj">
+      location = "self:/Users/codebendr/Documents/iLabs/2019/Swift/Udacity/MemeMe-2.0/MemeMe 2.0.xcodeproj">
    </FileRef>
 </Workspace>
