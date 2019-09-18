@@ -47,6 +47,8 @@ class MemeViewController: UIViewController {
     
     @IBAction func eraseMemeButtonPressed(_ sender: Any) {
         
+        self.view.endEditing(true)
+        
         let alert =  Alerts.show(type: .eraseMeme) { _ in
             self.txtTop.text = self.txtDefault
             self.txtBottom.text = self.txtDefault
