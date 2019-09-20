@@ -61,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2DA3932335738D0088E240 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F2DA38F233566070088E240 /* TableViewCell.swift */,
+				9F2DA391233566560088E240 /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9F3759012329D25A00ED1272 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +90,7 @@
 		9F37590C2329D25B00ED1272 /* MemeMe 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				9F2DA3932335738D0088E240 /* Views */,
 				9F37591B2329D26500ED1272 /* Info.plist */,
 				9F3759182329D26500ED1272 /* LaunchScreen.storyboard */,
 				9F404E61232DD1210011DF1B /* Controllers */,
@@ -111,8 +121,6 @@
 				9F2DA38923351D4A0088E240 /* CollectionViewController.swift */,
 				9F2DA38B23351D630088E240 /* TableViewController.swift */,
 				9F2DA38D23351F890088E240 /* DetailViewController.swift */,
-				9F2DA38F233566070088E240 /* TableViewCell.swift */,
-				9F2DA391233566560088E240 /* CollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
