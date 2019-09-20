@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension MemeViewController {
+extension EditMemeViewController {
     
     func subscribeToNotifications() {
         

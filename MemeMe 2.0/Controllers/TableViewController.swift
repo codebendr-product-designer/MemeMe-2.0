@@ -19,10 +19,23 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil , action: #selector(addMemeButtonPressed))
     }
     
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    @objc func addMemeButtonPressed() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier :"EditMemeViewController") as! EditMemeViewController
+        self.present(viewController, animated: true)
+    }
+    
+}
+
+// MARK: - Table view data source
+extension TableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -36,15 +49,12 @@ class TableViewController: UITableViewController {
         return memes.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! TableViewCell
         
-       // cell.meme = memes[indexPath.row]
+        cell.meme = memes[indexPath.row]
         
         return cell
     }
-    
-    
     
 }

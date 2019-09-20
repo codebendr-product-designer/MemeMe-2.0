@@ -17,7 +17,7 @@
         <!--EditViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="EditViewController" title="EditViewController" id="BYZ-38-t0r" customClass="MemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditMemeViewController" title="EditViewController" id="BYZ-38-t0r" customClass="EditMemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,11 +324,11 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="129.08545727136433"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="4Qv-yW-Icw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ogs-Zt-q7A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Agp-hM-8kE"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="Agp-hM-8kE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SFR-Va-Z7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -343,11 +343,11 @@
             </objects>
             <point key="canvasLocation" x="1105" y="-206"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="n9d-Ww-5qn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FXK-7W-1We" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="TER-Cw-HK1"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="TER-Cw-HK1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HBE-tj-3Le">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -364,6 +364,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="collection" width="30" height="30.5"/>
         <image name="default-meme" width="309" height="352"/>
+        <image name="table" width="30" height="30"/>
     </resources>
 </document>

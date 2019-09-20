@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController {
+class EditMemeViewController: UIViewController {
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var btnCamera: PickerImageButton!
@@ -94,7 +94,7 @@ class MemeViewController: UIViewController {
 }
 
 //MARK: Private Methods
-extension MemeViewController {
+extension EditMemeViewController {
     
     func configureTextField(_ textField: UITextField) {
         textField.defaultTextAttributes = [
@@ -130,7 +130,7 @@ extension MemeViewController {
 }
 
 //MARK: UIImagePickerControllerDelegate
-extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditMemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func shareButtonPressed() {
         
@@ -145,9 +145,9 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
             let meme = Meme(topText: txtTop.text!, bottomText: txtBottom.text!, originalImage: img.image!, memedImage: memedImage)
             
             shareImage(image: meme.memedImage) {
-                // Add it to the memes array in the Application Delegate
                 (UIApplication.shared.delegate as!
                     AppDelegate).memes.append(meme)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension MemeViewController: UITextFieldDelegate {
+extension EditMemeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
