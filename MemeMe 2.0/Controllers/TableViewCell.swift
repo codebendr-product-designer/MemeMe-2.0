@@ -9,16 +9,22 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var txtMeme: UILabel!
+    @IBOutlet weak var imgMeme: UIImageView!
+    
+    override func prepareForReuse() {
+        txtMeme.text = .none
+        imgMeme.image = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var meme: Meme? {
+        didSet {
+            if let meme = meme {
+                txtMeme.text = "\(meme.topText) - \(meme.bottomText)"
+                imgMeme.image = meme.originalImage
+            }
+        }
     }
-
+    
 }

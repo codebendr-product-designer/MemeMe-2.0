@@ -10,4 +10,27 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgMeme: UIImageView!
+    
+    override func prepareForReuse() {
+        imgMeme.image = .none
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imgMeme.layer.masksToBounds = false
+        imgMeme.layer.cornerRadius = imgMeme.frame.height/2
+        imgMeme.clipsToBounds = true
+        
+    }
+    
+    var meme: Meme? {
+        didSet {
+            if let meme = meme {
+                imgMeme.image = meme.originalImage
+            }
+        }
+    }
+    
 }
