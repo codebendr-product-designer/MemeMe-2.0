@@ -144,20 +144,29 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
             let memedImage = generateMemedImage()
             let meme = Meme(topText: txtTop.text!, bottomText: txtBottom.text!, originalImage: img.image!, memedImage: memedImage)
             
-            shareImage(image: meme.memedImage)
+            shareImage(image: meme.memedImage) {
+                // Add it to the memes array in the Application Delegate
+                (UIApplication.shared.delegate as!
+                    AppDelegate).memes.append(meme)
+            }
         }
         
     }
     
-    func shareImage(image: UIImage) {
+    func shareImage(image: UIImage, saved: @escaping () -> Void) {
         
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
         activityViewController.completionWithItemsHandler = {
             activity, completed, items, error in
+            
+            if completed {
+                saved()
+            }
+            
             self.configureUI(isShowing: false)
         }
-
+        
         present(activityViewController, animated: true)
         
     }
