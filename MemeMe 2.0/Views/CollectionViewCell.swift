@@ -28,7 +28,8 @@ class CollectionViewCell: UICollectionViewCell {
     var meme: Meme? {
         didSet {
             if let meme = meme {
-                imgMeme.image = meme.originalImage
+                print("sdfdsf----------------------\(meme.memedImage)")
+                imgMeme.image = meme.memedImage
             }
         }
     }

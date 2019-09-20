@@ -125,7 +125,7 @@
             <objects>
                 <tableViewController title="TableViewController" id="gZj-Fz-hSi" customClass="TableViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bCW-of-EhA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -143,10 +143,10 @@
                                                 <constraint firstAttribute="height" constant="117" id="zSG-i9-8w5"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Cannot Simply change - Text can we." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isF-df-A37">
-                                            <rect key="frame" x="135" y="30" width="224" height="45.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Cannot Simply change - Text can we." lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="isF-df-A37">
+                                            <rect key="frame" x="135" y="10" width="224" height="116"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="sAg-Sb-0fi"/>
+                                                <constraint firstAttribute="height" constant="116" id="4uv-55-4u2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                             <color key="textColor" red="0.25247198539942051" green="0.25247198539942051" blue="0.25247198539942051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -155,7 +155,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="g1p-DK-b6e" firstAttribute="top" secondItem="le1-oe-bHJ" secondAttribute="top" constant="10" id="4lx-gN-heZ"/>
-                                        <constraint firstItem="isF-df-A37" firstAttribute="top" secondItem="le1-oe-bHJ" secondAttribute="top" constant="30" id="RIg-AD-h3I"/>
+                                        <constraint firstItem="isF-df-A37" firstAttribute="top" secondItem="le1-oe-bHJ" secondAttribute="top" constant="10" id="RIg-AD-h3I"/>
                                         <constraint firstItem="g1p-DK-b6e" firstAttribute="leading" secondItem="le1-oe-bHJ" secondAttribute="leading" constant="10" id="dhV-h5-BlG"/>
                                         <constraint firstAttribute="trailing" secondItem="isF-df-A37" secondAttribute="trailing" constant="16" id="ege-vg-h3R"/>
                                         <constraint firstItem="isF-df-A37" firstAttribute="leading" secondItem="g1p-DK-b6e" secondAttribute="trailing" constant="8" id="mcr-99-84v"/>
@@ -173,6 +173,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GXy-dk-xes"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYx-0g-Ljf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,12 +184,13 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="Qco-lE-hFM" customClass="DetailViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFu-Vc-9Ob">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="C1b-oo-bZ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="bdq-ph-QS2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvZ-q3-fOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +201,7 @@
             <objects>
                 <collectionViewController title="CollectionViewController" id="cJl-93-yE6" customClass="CollectionViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EIb-Bs-wlR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kmq-6N-9On">
@@ -209,7 +211,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="XTc-r8-cdz" customClass="CollectionViewCell" customModule="Meme_Me" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="XTc-r8-cdz" customClass="CollectionViewCell" customModule="Meme_Me" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4I4-zg-YsY">
@@ -224,7 +226,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <outlet property="imgMeme" destination="AOp-Ja-1KO" id="8fj-Na-xD7"/>
+                                    <outlet property="imgMeme" destination="AOp-Ja-1KO" id="OA2-i9-9Md"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -234,6 +236,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="wwZ-5R-5xW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWt-aa-v7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,8 +314,10 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QwQ-XX-6pE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="irp-nj-Ulc">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="irp-nj-Ulc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -329,9 +334,13 @@
         <scene sceneID="4Qv-yW-Icw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ogs-Zt-q7A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="table" id="Agp-hM-8kE"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="Agp-hM-8kE">
+                        <color key="badgeColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SFR-Va-Z7g">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="SFR-Va-Z7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -350,7 +359,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FXK-7W-1We" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="collection" id="TER-Cw-HK1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HBE-tj-3Le">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="HBE-tj-3Le">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

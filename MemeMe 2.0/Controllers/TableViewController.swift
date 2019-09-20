@@ -18,17 +18,15 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.leftItemsSupplementBackButton = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMemeButtonPressed))
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
         tableView.reloadData()
     }
     
     @objc func addMemeButtonPressed() {
-        print("info info")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier :"EditMemeViewController") as! EditMemeViewController
         navigationController?.pushViewController(viewController, animated: true)
@@ -39,9 +37,9 @@ class TableViewController: UITableViewController {
 // MARK: - Table view data source
 extension TableViewController {
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
+    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return UITableView.automaticDimension
+    //    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

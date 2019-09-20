@@ -33,6 +33,9 @@ class EditMemeViewController: UIViewController {
         configureTextField(txtTop)
         configureTextField(txtBottom)
         
+        navigationItem.leftItemsSupplementBackButton = true
+        tabBarController?.tabBar.isHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
