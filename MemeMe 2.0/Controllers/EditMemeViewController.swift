@@ -34,17 +34,19 @@ class EditMemeViewController: UIViewController {
         configureTextField(txtBottom)
         
         navigationItem.leftItemsSupplementBackButton = true
-        tabBarController?.tabBar.isHidden = true
+       
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      tabBarController?.tabBar.isHidden = true
         subscribeToNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    tabBarController?.tabBar.isHidden = false
         unsubscribeFromNotifications()
     }
     
@@ -103,7 +105,7 @@ extension EditMemeViewController {
         textField.defaultTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.strokeColor : UIColor.black,
-            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedString.Key.font : UIFont(name: "impact", size: 40)!,
             NSAttributedString.Key.strokeWidth: -4.0,
         ]
         textField.textColor = UIColor.white

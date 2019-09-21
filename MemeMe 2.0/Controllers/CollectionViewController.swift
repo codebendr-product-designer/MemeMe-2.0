@@ -30,8 +30,9 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
-        tabBarController?.tabBar.isHidden = false
     }
+    
+    
     
     @objc func addMemeButtonPressed() {
           let storyboard = UIStoryboard(name: "Main", bundle: nil)

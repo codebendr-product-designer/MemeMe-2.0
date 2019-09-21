@@ -38,7 +38,7 @@
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-fX-ah6">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-fX-ah6">
                                 <rect key="frame" x="0.0" y="573" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6DA-rX-P5b"/>
@@ -69,7 +69,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.070589356124401093" green="0.070586778223514557" blue="0.070587299764156342" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -128,6 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="140" id="t93-L2-j50" customClass="TableViewCell" customModule="Meme_Me" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -138,6 +139,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="g1p-DK-b6e">
                                             <rect key="frame" x="10" y="10" width="117" height="117"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="117" id="VAB-Fw-Tzf"/>
                                                 <constraint firstAttribute="height" constant="117" id="zSG-i9-8w5"/>
@@ -149,7 +151,7 @@
                                                 <constraint firstAttribute="height" constant="116" id="4uv-55-4u2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                            <color key="textColor" red="0.25247198539942051" green="0.25247198539942051" blue="0.25247198539942051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -161,6 +163,7 @@
                                         <constraint firstItem="isF-df-A37" firstAttribute="leading" secondItem="g1p-DK-b6e" secondAttribute="trailing" constant="8" id="mcr-99-84v"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="imgMeme" destination="g1p-DK-b6e" id="eFK-UC-YbS"/>
                                     <outlet property="txtMeme" destination="isF-df-A37" id="J9T-bG-t1m"/>
@@ -203,7 +206,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EIb-Bs-wlR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kmq-6N-9On">
                             <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -221,6 +224,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="AOp-Ja-1KO">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </imageView>
                                     </subviews>
                                 </collectionViewCellContentView>
@@ -252,7 +256,7 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28i-mL-yJY">
                                 <rect key="frame" x="0.0" y="431" width="375" height="216"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="0p6-GT-xT2" id="Op8-7T-IIN"/>
                                     <outlet property="delegate" destination="0p6-GT-xT2" id="MKT-Z6-fxR"/>
@@ -279,24 +283,24 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONE DOES NOT SIMPLY CHOOSE A FONT " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-x9-jSe">
-                                <rect key="frame" x="41" y="140" width="302" height="24"/>
+                                <rect key="frame" x="41" y="100" width="302" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="eJl-uT-oFM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="28i-mL-yJY" firstAttribute="bottom" secondItem="6yA-PR-qXw" secondAttribute="bottom" id="0A9-XF-Jgx"/>
                             <constraint firstItem="euO-lR-LFm" firstAttribute="top" secondItem="28i-mL-yJY" secondAttribute="top" id="LlG-v7-zuK"/>
                             <constraint firstItem="ebw-x9-jSe" firstAttribute="leading" secondItem="6yA-PR-qXw" secondAttribute="leading" constant="41" id="MJm-tU-oGk"/>
                             <constraint firstItem="28i-mL-yJY" firstAttribute="leading" secondItem="6yA-PR-qXw" secondAttribute="leading" id="MqM-3e-xcp"/>
                             <constraint firstItem="28i-mL-yJY" firstAttribute="trailing" secondItem="6yA-PR-qXw" secondAttribute="trailing" id="fA5-Ol-RdG"/>
-                            <constraint firstItem="ebw-x9-jSe" firstAttribute="top" secondItem="6yA-PR-qXw" secondAttribute="top" constant="140" id="pRv-hM-CdM">
-                                <variation key="heightClass=compact-widthClass=compact" constant="49"/>
+                            <constraint firstItem="ebw-x9-jSe" firstAttribute="top" secondItem="6yA-PR-qXw" secondAttribute="top" constant="100" id="pRv-hM-CdM">
+                                <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="euO-lR-LFm" firstAttribute="leading" secondItem="28i-mL-yJY" secondAttribute="leading" id="swa-iS-Qrx"/>
                             <constraint firstItem="euO-lR-LFm" firstAttribute="trailing" secondItem="28i-mL-yJY" secondAttribute="trailing" id="tKQ-8d-Qd9"/>

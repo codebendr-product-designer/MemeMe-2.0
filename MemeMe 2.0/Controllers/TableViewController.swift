@@ -22,9 +22,13 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = false
         tableView.reloadData()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+       tabBarController?.tabBar.isHidden = true
+       }
     
     @objc func addMemeButtonPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

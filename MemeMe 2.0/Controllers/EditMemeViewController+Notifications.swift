@@ -43,7 +43,9 @@ extension EditMemeViewController {
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y = 0
+        if txtBottom.isFirstResponder {
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {

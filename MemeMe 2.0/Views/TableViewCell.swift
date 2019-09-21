@@ -22,7 +22,7 @@ class TableViewCell: UITableViewCell {
         didSet {
             if let meme = meme {
                 txtMeme.text = "\(meme.topText) - \(meme.bottomText)"
-                imgMeme.image = meme.originalImage
+                imgMeme.image = meme.memedImage
             }
         }
     }
