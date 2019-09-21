@@ -19,6 +19,7 @@ class EditMemeViewController: UIViewController {
     
     let txtDefault = "TEXT GOES HERE"
     let txtEmpty = ""
+    var meme: Meme?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -26,6 +27,12 @@ class EditMemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let meme = meme {
+            txtTop.text = meme.topText
+            txtBottom.text = meme.bottomText
+            img.image = meme.originalImage
+        }
         
         btnCamera.sourceType = .camera
         btnCameraRoll.sourceType = .photoLibrary

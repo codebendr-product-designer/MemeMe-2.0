@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--EditViewController-->
+        <!--Edit Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="EditMemeViewController" title="EditViewController" id="BYZ-38-t0r" customClass="EditMemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditMemeViewController" id="BYZ-38-t0r" customClass="EditMemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2810" y="-206"/>
+            <point key="canvasLocation" x="4471.1999999999998" y="-206.44677661169416"/>
         </scene>
         <!--TableViewController-->
         <scene sceneID="Z9m-Uq-eFV">
@@ -128,7 +128,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="140" id="t93-L2-j50" customClass="TableViewCell" customModule="Meme_Me" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -185,11 +184,22 @@
         <!--DetailViewController-->
         <scene sceneID="B0F-tz-uDh">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="Qco-lE-hFM" customClass="DetailViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="DetailViewController" id="Qco-lE-hFM" customClass="DetailViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFu-Vc-9Ob">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esO-Le-lEn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="esO-Le-lEn" firstAttribute="top" secondItem="C1b-oo-bZ6" secondAttribute="top" id="F7q-kd-ohF"/>
+                            <constraint firstItem="esO-Le-lEn" firstAttribute="bottom" secondItem="C1b-oo-bZ6" secondAttribute="bottom" id="ILo-sd-VJZ"/>
+                            <constraint firstItem="esO-Le-lEn" firstAttribute="trailing" secondItem="C1b-oo-bZ6" secondAttribute="trailing" id="i0u-ca-86k"/>
+                            <constraint firstItem="esO-Le-lEn" firstAttribute="leading" secondItem="C1b-oo-bZ6" secondAttribute="leading" id="rRV-OM-bHp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C1b-oo-bZ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="bdq-ph-QS2"/>
@@ -197,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvZ-q3-fOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="527"/>
+            <point key="canvasLocation" x="4471.1999999999998" y="526.6866566716642"/>
         </scene>
         <!--CollectionViewController-->
         <scene sceneID="E0Z-CN-pqA">
@@ -206,9 +216,9 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EIb-Bs-wlR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kmq-6N-9On">
-                            <size key="itemSize" width="90" height="90"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -221,16 +231,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="AOp-Ja-1KO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-meme" translatesAutoresizingMaskIntoConstraints="NO" id="fRQ-hy-9Ou">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.074510954320000003" green="0.074508346619999999" blue="0.074508853259999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </imageView>
                                     </subviews>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <outlet property="imgMeme" destination="AOp-Ja-1KO" id="OA2-i9-9Md"/>
+                                    <outlet property="img" destination="fRQ-hy-9Ou" id="6gL-j2-ECT"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -311,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ock-tT-mZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3677.5999999999999" y="-206.44677661169416"/>
+            <point key="canvasLocation" x="5340" y="-206.44677661169416"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JIF-Jv-bpb">
@@ -377,6 +387,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgq-pk-jqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105" y="527"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y1U-it-HtD">
+            <objects>
+                <navigationController storyboardIdentifier="EditViewController" automaticallyAdjustsScrollViewInsets="NO" id="drB-Jx-N9f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tcf-XC-hoa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CGJ-hS-hO2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wx9-u3-6eL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3532" y="-206.44677661169416"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="86L-GP-kSJ">
+            <objects>
+                <navigationController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="05o-4U-02L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="17x-WF-rCI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qco-lE-hFM" kind="relationship" relationship="rootViewController" id="IS5-8I-U8B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VP-2w-aJU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3532" y="526.6866566716642"/>
         </scene>
     </scenes>
     <resources>

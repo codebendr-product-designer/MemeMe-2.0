@@ -46,6 +46,7 @@ extension EditMemeViewController {
         if txtBottom.isFirstResponder {
             view.frame.origin.y += getKeyboardHeight(notification)
         }
+  
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
