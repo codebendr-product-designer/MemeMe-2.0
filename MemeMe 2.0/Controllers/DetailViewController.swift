@@ -22,6 +22,17 @@ class DetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+
+      }
+      
+      override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+      tabBarController?.tabBar.isHidden = false
+      }
+    
     @objc func editMemeButtonPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier :"EditMemeViewController") as! EditMemeViewController

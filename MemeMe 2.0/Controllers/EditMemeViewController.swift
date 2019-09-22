@@ -160,7 +160,8 @@ extension EditMemeViewController: UIImagePickerControllerDelegate, UINavigationC
             shareImage(image: meme.memedImage) {
                 (UIApplication.shared.delegate as!
                     AppDelegate).memes.append(meme)
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
+                
             }
         }
         
