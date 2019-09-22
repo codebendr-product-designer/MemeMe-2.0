@@ -10,25 +10,25 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var memeImageImage: UIImageView!
+    @IBOutlet weak var imgMeme: UIImageView!
     
     override func prepareForReuse() {
-//        img.image = .none
+        imgMeme.image = .none
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        img.layer.masksToBounds = false
-//        img.layer.cornerRadius = img.frame.height/2
-//        img.clipsToBounds = true
+        imgMeme.layer.masksToBounds = false
+        imgMeme.layer.cornerRadius = imgMeme.frame.height/2
+        imgMeme.clipsToBounds = true
         
     }
     
     var meme: Meme? {
         didSet {
             if let meme = meme {
-               memeImageImage.image = meme.memedImage
+                imgMeme.image = meme.memedImage
             }
         }
     }
