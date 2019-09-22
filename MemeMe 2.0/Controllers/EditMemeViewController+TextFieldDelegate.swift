@@ -27,7 +27,7 @@ extension EditMemeViewController: UITextFieldDelegate {
             textField.text = txtDefault
         }
     }
-
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var text = textField.text as NSString?

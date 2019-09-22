@@ -42,19 +42,19 @@ class EditMemeViewController: UIViewController {
         
         
         navigationItem.leftItemsSupplementBackButton = true
-       
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         subscribeToNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-    tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
         unsubscribeFromNotifications()
     }
     

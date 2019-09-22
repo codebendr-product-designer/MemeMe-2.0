@@ -49,10 +49,6 @@ extension TableViewController  {
 // MARK: - Table view data source
 extension TableViewController {
     
-    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return UITableView.automaticDimension
-    //    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

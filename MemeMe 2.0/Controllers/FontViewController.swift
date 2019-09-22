@@ -25,7 +25,7 @@ class FontViewController: UIViewController {
         if !font.isEmpty {
             NotificationCenter.default.post(name: .didChooseFontName, object: font)
         }
-       dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
