@@ -26,16 +26,27 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-           super.viewWillDisappear(animated)
-       tabBarController?.tabBar.isHidden = true
-       }
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
     
     @objc func addMemeButtonPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier :"EditMemeViewController") as! EditMemeViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "EditMemeViewController") as! EditMemeViewController
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+}
+
+// MARK: - UITableViewDelegate
+extension TableViewController  {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        viewController.meme = memes[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: - Table view data source

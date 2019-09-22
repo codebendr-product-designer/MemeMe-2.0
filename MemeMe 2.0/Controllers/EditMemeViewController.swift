@@ -28,17 +28,18 @@ class EditMemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnCamera.sourceType = .camera
+        btnCameraRoll.sourceType = .photoLibrary
+        
+        configureTextField(txtTop)
+        configureTextField(txtBottom)
+        
         if let meme = meme {
             txtTop.text = meme.topText
             txtBottom.text = meme.bottomText
             img.image = meme.originalImage
         }
         
-        btnCamera.sourceType = .camera
-        btnCameraRoll.sourceType = .photoLibrary
-        
-        configureTextField(txtTop)
-        configureTextField(txtBottom)
         
         navigationItem.leftItemsSupplementBackButton = true
        
